@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="taquisos.venta" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Taquisos Venta</name>
+    <description>
+        Aplicacion de venta Taquisos.
+    </description>
+    <author email="contacto@mindtec.com.mx" href="http://mindtec.com.mx/">
+        Mindtec Software Revolution
+    </author>
+	<platform name="android">
+		<icon src="img/logo.png" />
+    </platform>
+	<preference name="KeepRunning" value="false"/>
+	<preference name="android-minSdkVersion" value="1" />
+    <content src="index.html" />
+	<!--<plugin name="Storage" value="org.apache.cordova.Storage" />-->
+    <access origin="*" /> 
+</widget>
