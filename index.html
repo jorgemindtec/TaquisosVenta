@@ -32,6 +32,8 @@
 		var Pquesadilla="QUESADILLA";
 		var Pagua="AGUA";
 		var Pcoca="COCA";
+		var Ptasada="TACO ASADA";
+		var Pqasada="QUESADILLA ASADA";
 		
 		var fecha = new Date();
 		
@@ -366,6 +368,20 @@
 					+'","'+document.getElementById("price6").value
 					+'","'+idpedido+'")');
 			}
+			if(document.getElementById("number7").value!="" & document.getElementById("number7").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+Ptasada
+					+'","'+document.getElementById("number7").value
+					+'","'+document.getElementById("price7").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number8").value!="" & document.getElementById("number8").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+Pqasada
+					+'","'+document.getElementById("number8").value
+					+'","'+document.getElementById("price8").value
+					+'","'+idpedido+'")');
+			}
 			CobrarPedido();
 			MostrarDetalleProducto();
 		}
@@ -407,6 +423,7 @@
 		function querySuccessFecha(tx, results) {
 			var searchDate;
 			var searchTotal;
+			var FechasTotalVenta=0;
             var tblText='<table id="report-info-detalle"><tr class="table-header"><td>Fecha</td><td>Total</td></tr>';
             var len = results.rows.length;
             for (var i = 0; i < len; i++) {
@@ -419,15 +436,18 @@
 				}
 				else{
 					tblText +='<tr><td>'+searchDate+'</td><td>$'+searchTotal+'</td></tr>';
+					//FechasTotalVenta+=searchTotal;
 					searchDate=results.rows.item(i).fecha;
 					searchTotal = results.rows.item(i).total;
 				}
 				if(i+1==len){					
 					tblText +='<tr><td>'+searchDate+'</td><td>$'+searchTotal+'</td></tr>';
+					//FechasTotalVenta+=searchTotal;
 				}
             }
             tblText +="</table>";
             document.getElementById("VentaProducto").value ="Todos";
+            //document.getElementById("VentaProductoTotal").value =FechasTotalVenta;			
             document.getElementById("report-detail").innerHTML =tblText;
         }		
 		// --------- VENTAS POR PRODUCTO EN RANGO DE FECHAS
@@ -601,6 +621,18 @@
 						</td>
 					</tr>
 					<tr class="row-products">
+						<td class="item" onclick="producto(1,7)">
+						<div class="item-content">
+							<div class="item-name">T. ASADA</div>
+							<div class="item-image"><img src="img/taco.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,8)">
+						<div class="item-content">
+							<div class="item-name">Q. ASADA</div>
+							<div class="item-image"><img src="img/quesadilla.png"></div>
+						</div>
+						</td>
 						<td class="item" onclick="producto(1,5)">
 						<div class="item-content">
 							<div class="item-name">AGUA</div>
@@ -646,6 +678,20 @@
 							<td class="item-list name">QUESADILLA</td>
 							<td class="column-price"><input id="price4" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,4)">X</td>
+						</tr>
+						<tr class="row-list" id="producto7">
+							<td class="item-list less" onclick="producto(2,7)">-</td>
+							<td class="column-number"><input id="number7" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">TACO ASADA</td>
+							<td class="column-price"><input id="price7" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,7)">X</td>
+						</tr>
+						<tr class="row-list" id="producto8">
+							<td class="item-list less" onclick="producto(2,8)">-</td>
+							<td class="column-number"><input id="number8" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">QUESADILLA ASADA</td>
+							<td class="column-price"><input id="price8" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,8)">X</td>
 						</tr>
 						<tr class="row-list" id="producto5">
 							<td class="item-list less" onclick="producto(2,5)">-</td>
@@ -714,6 +760,8 @@
 					<option value="BURRITO">BURRITO</option>
 					<option value="GORDITA">GORDITA</option>
 					<option value="QUESADILLA">QUESADILLA</option>
+					<option value="TACO ASADA">TACO ASADA</option>
+					<option value="QUESADILLA ASADA">QUESADILLA ASADA</option>
 					<option value="AGUA">AGUA</option>
 					<option value="COCA">COCA</option></select>
 				</tr></table>
@@ -743,6 +791,7 @@
 			<div id="order-details-product" class="hide">
 				<div class="sub-title detalle-reporte">Resultado de Busqueda</div>
 				<div id="report-product">Producto: <input type="text" id="VentaProducto" readonly></div>
+				<!--<div id="report-product-total">Venta Total: $<input type="text" id="VentaProductoTotal" readonly></div>-->
 				<div id="report-detail"></div>
 			</div>
 			<!--<div class="button" onclick="BorrarTablas()">Limpiar Tablas</div>-->
