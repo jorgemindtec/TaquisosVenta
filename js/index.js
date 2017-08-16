@@ -60,7 +60,7 @@
 	var burrito=22;
 	var gordita=22;
 	var quesadilla=25;
-	var agua=10;
+	var agua=12;
 	var coca=15;
 	var tasada=20;
 	var qasada=28;
