@@ -56,12 +56,12 @@
 	var precio7=0;
 	var precio8=0;
 	
-	var taco=17;
-	var burrito=22;
-	var gordita=22;
+	var taco=20;
+	var burrito=40;
+	var gordita=45;
 	var quesadilla=25;
-	var agua=12;
-	var coca=15;
+	var agua=15;
+	var coca=20;
 	var tasada=20;
 	var qasada=28;
 	
