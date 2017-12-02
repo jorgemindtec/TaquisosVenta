@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="taquisos.venta" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Taquisos Venta</name>
+    <name>Taquisos Especial</name>
     <description>
         Aplicacion de venta Taquisos.
     </description>
@@ -8,7 +8,7 @@
         Mindtec Software Revolution
     </author>
 	<platform name="android">
-		<icon src="img/icon-taquisos.png" />
+		<icon src="img/icon-taquisos-e.png" />
     </platform>
 	<preference name="KeepRunning" value="false"/>
 	<preference name="android-minSdkVersion" value="1" />
