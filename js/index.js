@@ -56,14 +56,14 @@
 	var precio7=0;
 	var precio8=0;
 	
-	var taco=20;
-	var burrito=40;
-	var gordita=45;
-	var quesadilla=25;
+	var taco=18;
+	var burrito=24;
+	var gordita=24;
+	var quesadilla=27;
 	var agua=15;
-	var coca=20;
-	var tasada=20;
-	var qasada=28;
+	var coca=15;
+	var tasada=22;
+	var qasada=30;
 	
 	/*	operacion=1 --> suma
 		operacion=2 --> resta
