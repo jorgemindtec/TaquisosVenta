@@ -8,7 +8,7 @@
         Mindtec Software Revolution
     </author>
 	<platform name="android">
-		<icon src="img/icon-taquisos-e.png" />
+		<icon src="img/icon-taquisos.png" />
     </platform>
 	<preference name="KeepRunning" value="false"/>
 	<preference name="android-minSdkVersion" value="1" />
