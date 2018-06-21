@@ -45,6 +45,7 @@
 	var valor6=0;
 	var valor7=0;
 	var valor8=0;
+	var valor9=0;
 	
 	var total=0;
 	var precio1=0;
@@ -55,6 +56,7 @@
 	var precio6=0;
 	var precio7=0;
 	var precio8=0;
+	var precio9=0;
 	
 	var taco=18;
 	var burrito=24;
@@ -64,6 +66,7 @@
 	var coca=15;
 	var tasada=22;
 	var qasada=30;
+	var promo=50;
 	
 	/*	operacion=1 --> suma
 		operacion=2 --> resta
@@ -125,6 +128,13 @@
 				document.getElementById("number8").value=valor8;
 				precio8=precio8+qasada;
 				document.getElementById("price8").value=precio8;
+			}
+			else if(producto==9){//producto 9 promo
+				document.getElementById("producto9").className="row-list on";
+				valor9++;
+				document.getElementById("number9").value=valor9;
+				precio9=precio9+promo;
+				document.getElementById("price9").value=precio9;
 			}
 		}
 		else if(operacion==2){//restar producto
@@ -240,6 +250,20 @@
 					document.getElementById("price8").value=precio8;				
 				}
 			}
+			else if(producto==9){//producto 9 promo
+				if(valor9==1){
+					valor9=0;
+					document.getElementById("number9").value=valor9;
+					precio9=0;
+					document.getElementById("price9").value=precio9;
+					document.getElementById("producto9").className="row-list";					
+				}else {				
+					valor9--;
+					document.getElementById("number9").value=valor9;
+					precio9=precio9-promo;
+					document.getElementById("price9").value=precio9;			
+				}
+			}
 		}
 		else if(operacion==3){//eliminar producto
 			if(producto==1){
@@ -298,8 +322,15 @@
 				document.getElementById("price8").value=precio8;
 				document.getElementById("producto8").className="row-list";	
 			}
+			else if(producto==9){
+				valor9=0;
+				document.getElementById("number9").value=valor9;
+				precio9=0;
+				document.getElementById("price9").value=precio9;
+				document.getElementById("producto9").className="row-list";	
+			}
 		}
-		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8;
+		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8+precio9;
 		document.getElementById("totalprice").value=total;	
 	}
 	function CobrarPedido(){
@@ -311,6 +342,7 @@
 		valor6=0;	
 		valor7=0;
 		valor8=0;
+		valor9=0;
 		total=0;
 		precio1=0;
 		precio2=0;
@@ -320,6 +352,7 @@
 		precio6=0;
 		precio7=0;
 		precio8=0;
+		precio9=0;
 		document.getElementById("number1").value=0;
 		document.getElementById("price1").value=0;
 		document.getElementById("producto1").className="row-list";
@@ -344,5 +377,8 @@
 		document.getElementById("number8").value=0;
 		document.getElementById("price8").value=0;
 		document.getElementById("producto8").className="row-list";
+		document.getElementById("number9").value=0;
+		document.getElementById("price9").value=0;
+		document.getElementById("producto9").className="row-list";
 		document.getElementById("totalprice").value=0;
 	}
