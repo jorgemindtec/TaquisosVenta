@@ -34,6 +34,7 @@
 		var Pcoca="COCA";
 		var Ptasada="TACO ASADA";
 		var Pqasada="QUESADILLA ASADA";
+		var Ppromo="PROMO";
 		
 		var fecha = new Date();
 		
@@ -382,6 +383,13 @@
 					+'","'+document.getElementById("price8").value
 					+'","'+idpedido+'")');
 			}
+			if(document.getElementById("number9").value!="" & document.getElementById("number9").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+Ppromo
+					+'","'+document.getElementById("number9").value
+					+'","'+document.getElementById("price9").value
+					+'","'+idpedido+'")');
+			}
 			CobrarPedido();
 			MostrarDetalleProducto();
 		}
@@ -646,6 +654,17 @@
 						</div>
 						</td>
 					</tr>		
+					<tr class="row-products">
+						<td class="item" onclick="producto(1,9)">
+						<div class="item-content">
+							<div class="item-name">PROMO</div>
+							<div class="item-image"><img src="img/promo.png"></div>
+						</div>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>		
 					</table>
 				</div>
 				<div class="list">
@@ -707,6 +726,13 @@
 							<td class="column-price"><input id="price6" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,6)">X</td>
 						</tr>
+						<tr class="row-list" id="producto9">
+							<td class="item-list less" onclick="producto(2,9)">-</td>
+							<td class="column-number"><input id="number9" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">PROMO</td>
+							<td class="column-price"><input id="price9" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,9)">X</td>
+						</tr>
 					</table>
 				</div>
 			</div>
@@ -763,7 +789,8 @@
 					<option value="TACO ASADA">TACO ASADA</option>
 					<option value="QUESADILLA ASADA">QUESADILLA ASADA</option>
 					<option value="AGUA">AGUA</option>
-					<option value="COCA">COCA</option></select>
+					<option value="COCA">COCA</option>
+					<option value="PROMO">PROMO</option></select>
 				</tr></table>
 			<div class="sub-title detalle-reporte">Buscar Por Rango de Fechas</div>
 				<table class="new-fields dates">
