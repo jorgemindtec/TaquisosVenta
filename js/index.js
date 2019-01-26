@@ -46,6 +46,12 @@
 	var valor7=0;
 	var valor8=0;
 	var valor9=0;
+	var valor10=0;
+	var valor11=0;
+	var valor12=0;
+	var valor13=0;
+	var valor14=0;
+	var valor15=0;
 	
 	var total=0;
 	var precio1=0;
@@ -57,16 +63,28 @@
 	var precio7=0;
 	var precio8=0;
 	var precio9=0;
+	var precio10=0;
+	var precio11=0;
+	var precio12=0;
+	var precio13=0;
+	var precio14=0;
+	var precio15=0;
 	
-	var taco=18;
-	var burrito=24;
-	var gordita=24;
-	var quesadilla=27;
-	var agua=15;
+	var taco=20;
+	var burrito=26;
+	var gordita=26;
+	var quesadilla=30;
+	var agua=10;
 	var coca=15;
-	var tasada=22;
-	var qasada=30;
+	var tasada=25;
+	var qasada=35;
 	var promo=50;
+	var basada=30;
+	var cafe=15;
+	var extra=10;
+	var aguaj=15;
+	var chilaquiles=35;
+	var huevo=20;
 	
 	/*	operacion=1 --> suma
 		operacion=2 --> resta
@@ -135,6 +153,48 @@
 				document.getElementById("number9").value=valor9;
 				precio9=precio9+promo;
 				document.getElementById("price9").value=precio9;
+			}
+			else if(producto==10){//producto 10 burrito asada
+				document.getElementById("producto10").className="row-list on";
+				valor10++;
+				document.getElementById("number10").value=valor10;
+				precio10=precio10+basada;
+				document.getElementById("price10").value=precio10;
+			}
+			else if(producto==11){//producto 11 cafe
+				document.getElementById("producto11").className="row-list on";
+				valor11++;
+				document.getElementById("number11").value=valor11;
+				precio11=precio11+cafe;
+				document.getElementById("price11").value=precio11;
+			}
+			else if(producto==12){//producto 12 extra
+				document.getElementById("producto12").className="row-list on";
+				valor12++;
+				document.getElementById("number12").value=valor12;
+				precio12=precio12+extra;
+				document.getElementById("price12").value=precio12;
+			}
+			else if(producto==13){//producto 13 agua jamaica
+				document.getElementById("producto13").className="row-list on";
+				valor13++;
+				document.getElementById("number13").value=valor13;
+				precio13=precio13+aguaj;
+				document.getElementById("price13").value=precio13;
+			}
+			else if(producto==14){//producto 14 chilaquiles
+				document.getElementById("producto14").className="row-list on";
+				valor14++;
+				document.getElementById("number14").value=valor14;
+				precio14=precio14+chilaquiles;
+				document.getElementById("price14").value=precio14;
+			}
+			else if(producto==15){//producto 15 huevo
+				document.getElementById("producto15").className="row-list on";
+				valor15++;
+				document.getElementById("number15").value=valor15;
+				precio15=precio15+huevo;
+				document.getElementById("price15").value=precio15;
 			}
 		}
 		else if(operacion==2){//restar producto
@@ -264,6 +324,90 @@
 					document.getElementById("price9").value=precio9;			
 				}
 			}
+			else if(producto==10){//producto 10 burrito asada
+				if(valor10==1){
+					valor10=0;
+					document.getElementById("number10").value=valor10;
+					precio10=0;
+					document.getElementById("price10").value=precio10;
+					document.getElementById("producto10").className="row-list";					
+				}else {				
+					valor10--;
+					document.getElementById("number10").value=valor10;
+					precio10=precio10-basada;
+					document.getElementById("price10").value=precio10;			
+				}
+			}
+			else if(producto==11){//producto 11 cafe
+				if(valor11==1){
+					valor11=0;
+					document.getElementById("number11").value=valor11;
+					precio11=0;
+					document.getElementById("price11").value=precio11;
+					document.getElementById("producto11").className="row-list";					
+				}else {				
+					valor11--;
+					document.getElementById("number11").value=valor11;
+					precio11=precio11-cafe;
+					document.getElementById("price11").value=precio11;			
+				}
+			}
+			else if(producto==12){//producto 12 extra
+				if(valor12==1){
+					valor12=0;
+					document.getElementById("number12").value=valor12;
+					precio12=0;
+					document.getElementById("price12").value=precio12;
+					document.getElementById("producto12").className="row-list";					
+				}else {				
+					valor12--;
+					document.getElementById("number12").value=valor12;
+					precio12=precio12-extra;
+					document.getElementById("price12").value=precio12;			
+				}
+			}
+			else if(producto==13){//producto 13 agua jamaica
+				if(valor13==1){
+					valor13=0;
+					document.getElementById("number13").value=valor13;
+					precio13=0;
+					document.getElementById("price13").value=precio13;
+					document.getElementById("producto13").className="row-list";					
+				}else {				
+					valor13--;
+					document.getElementById("number13").value=valor13;
+					precio13=precio13-aguaj;
+					document.getElementById("price13").value=precio13;			
+				}
+			}
+			else if(producto==14){//producto 14 chilaquiles
+				if(valor14==1){
+					valor14=0;
+					document.getElementById("number14").value=valor14;
+					precio14=0;
+					document.getElementById("price14").value=precio14;
+					document.getElementById("producto14").className="row-list";					
+				}else {				
+					valor14--;
+					document.getElementById("number14").value=valor14;
+					precio14=precio14-chilaquiles;
+					document.getElementById("price14").value=precio14;			
+				}
+			}
+			else if(producto==15){//producto 15 huevo
+				if(valor15==1){
+					valor15=0;
+					document.getElementById("number15").value=valor15;
+					precio15=0;
+					document.getElementById("price15").value=precio15;
+					document.getElementById("producto15").className="row-list";					
+				}else {				
+					valor15--;
+					document.getElementById("number15").value=valor15;
+					precio15=precio15-huevo;
+					document.getElementById("price15").value=precio15;			
+				}
+			}
 		}
 		else if(operacion==3){//eliminar producto
 			if(producto==1){
@@ -329,8 +473,50 @@
 				document.getElementById("price9").value=precio9;
 				document.getElementById("producto9").className="row-list";	
 			}
+			else if(producto==10){
+				valor10=0;
+				document.getElementById("number10").value=valor10;
+				precio10=0;
+				document.getElementById("price10").value=precio10;
+				document.getElementById("producto10").className="row-list";	
+			}
+			else if(producto==11){
+				valor11=0;
+				document.getElementById("number11").value=valor11;
+				precio11=0;
+				document.getElementById("price11").value=precio11;
+				document.getElementById("producto11").className="row-list";	
+			}
+			else if(producto==12){
+				valor12=0;
+				document.getElementById("number12").value=valor12;
+				precio12=0;
+				document.getElementById("price12").value=precio12;
+				document.getElementById("producto12").className="row-list";	
+			}
+			else if(producto==13){
+				valor13=0;
+				document.getElementById("number13").value=valor13;
+				precio13=0;
+				document.getElementById("price13").value=precio13;
+				document.getElementById("producto13").className="row-list";	
+			}
+			else if(producto==14){
+				valor14=0;
+				document.getElementById("number14").value=valor14;
+				precio14=0;
+				document.getElementById("price14").value=precio14;
+				document.getElementById("producto14").className="row-list";	
+			}
+			else if(producto==15){
+				valor15=0;
+				document.getElementById("number15").value=valor15;
+				precio15=0;
+				document.getElementById("price15").value=precio15;
+				document.getElementById("producto15").className="row-list";	
+			}
 		}
-		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8+precio9;
+		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8+precio9+precio10+precio11+precio12+precio13+precio14+precio15;
 		document.getElementById("totalprice").value=total;	
 	}
 	function CobrarPedido(){
@@ -343,6 +529,12 @@
 		valor7=0;
 		valor8=0;
 		valor9=0;
+		valor10=0;
+		valor11=0;
+		valor12=0;
+		valor13=0;
+		valor14=0;
+		valor15=0;
 		total=0;
 		precio1=0;
 		precio2=0;
@@ -353,6 +545,12 @@
 		precio7=0;
 		precio8=0;
 		precio9=0;
+		precio10=0;
+		precio11=0;
+		precio12=0;
+		precio13=0;
+		precio14=0;
+		precio15=0;
 		document.getElementById("number1").value=0;
 		document.getElementById("price1").value=0;
 		document.getElementById("producto1").className="row-list";
@@ -380,5 +578,23 @@
 		document.getElementById("number9").value=0;
 		document.getElementById("price9").value=0;
 		document.getElementById("producto9").className="row-list";
+		document.getElementById("number10").value=0;
+		document.getElementById("price10").value=0;
+		document.getElementById("producto10").className="row-list";
+		document.getElementById("number11").value=0;
+		document.getElementById("price11").value=0;
+		document.getElementById("producto11").className="row-list";
+		document.getElementById("number12").value=0;
+		document.getElementById("price12").value=0;
+		document.getElementById("producto12").className="row-list";
+		document.getElementById("number13").value=0;
+		document.getElementById("price13").value=0;
+		document.getElementById("producto13").className="row-list";
+		document.getElementById("number14").value=0;
+		document.getElementById("price14").value=0;
+		document.getElementById("producto14").className="row-list";
+		document.getElementById("number15").value=0;
+		document.getElementById("price15").value=0;
+		document.getElementById("producto15").className="row-list";
 		document.getElementById("totalprice").value=0;
 	}
