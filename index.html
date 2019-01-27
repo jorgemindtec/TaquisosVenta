@@ -30,11 +30,17 @@
 		var Pburrito="BURRITO";
 		var Pgordita="GORDITA";
 		var Pquesadilla="QUESADILLA";
-		var Pagua="AGUA";
+		var Pagua="AGUA NATURAL";
 		var Pcoca="COCA";
 		var Ptasada="TACO ASADA";
 		var Pqasada="QUESADILLA ASADA";
 		var Ppromo="PROMO";
+		var Pbasada="BURRITO ASADA";
+		var Pcafe="CAFE";
+		var Pextra="INGREDIENTE EXTRA";
+		var Paguaj="AGUA JAMAICA";
+		var Pchilaquiles="CHILAQUILES";
+		var Phuevo="HUEVO";
 		
 		var fecha = new Date();
 		
@@ -390,6 +396,48 @@
 					+'","'+document.getElementById("price9").value
 					+'","'+idpedido+'")');
 			}
+			if(document.getElementById("number10").value!="" & document.getElementById("number10").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+basada
+					+'","'+document.getElementById("number10").value
+					+'","'+document.getElementById("price10").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number11").value!="" & document.getElementById("number11").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+cafe
+					+'","'+document.getElementById("number11").value
+					+'","'+document.getElementById("price11").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number12").value!="" & document.getElementById("number12").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+extra
+					+'","'+document.getElementById("number12").value
+					+'","'+document.getElementById("price12").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number13").value!="" & document.getElementById("number13").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+aguaj
+					+'","'+document.getElementById("number13").value
+					+'","'+document.getElementById("price13").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number14").value!="" & document.getElementById("number14").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+chilaquiles
+					+'","'+document.getElementById("number14").value
+					+'","'+document.getElementById("price14").value
+					+'","'+idpedido+'")');
+			}
+			if(document.getElementById("number15").value!="" & document.getElementById("number15").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+huevo
+					+'","'+document.getElementById("number15").value
+					+'","'+document.getElementById("price15").value
+					+'","'+idpedido+'")');
+			}
 			CobrarPedido();
 			MostrarDetalleProducto();
 		}
@@ -606,25 +654,25 @@
 						<td class="item" onclick="producto(1,1)">
 						<div class="item-content">
 							<div class="item-name">TACO</div>
-							<div class="item-image"><img src="img/Img-Taco.png"></div>
+							<div class="item-image"><img src="img/P-Taco.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,2)">
 						<div class="item-content">
 							<div class="item-name">BURRITO</div>
-							<div class="item-image"><img src="img/Img-Burrito.png"></div>
+							<div class="item-image"><img src="img/P-Burrito.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,3)">
 						<div class="item-content">
 							<div class="item-name">GORDITA</div>
-							<div class="item-image"><img src="img/Img-Gordita.png"></div>
+							<div class="item-image"><img src="img/P-Gordita.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,4)">
 						<div class="item-content">
 							<div class="item-name">QUESADILLA</div>
-							<div class="item-image"><img src="img/Img-Quesadilla.png"></div>
+							<div class="item-image"><img src="img/P-Quesadilla.png"></div>
 						</div>
 						</td>
 					</tr>
@@ -632,39 +680,75 @@
 						<td class="item" onclick="producto(1,7)">
 						<div class="item-content">
 							<div class="item-name">T. ASADA</div>
-							<div class="item-image"><img src="img/Img-T-asada.png"></div>
+							<div class="item-image"><img src="img/P-T-asada.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,10)">
+						<div class="item-content">
+							<div class="item-name">B. ASADA</div>
+							<div class="item-image"><img src="img/P-B-Asada.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,8)">
 						<div class="item-content">
 							<div class="item-name">Q. ASADA</div>
-							<div class="item-image"><img src="img/Img-Q-asada.png"></div>
+							<div class="item-image"><img src="img/P-Q-asada.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,14)">
+						<div class="item-content">
+							<div class="item-name">CHILAQUILES</div>
+							<div class="item-image"><img src="img/P-chilaquiles.png"></div>
+						</div>
+						</td>
+					</tr>		
+					<tr class="row-products">
+						<td class="item" onclick="producto(1,15)">
+						<div class="item-content">
+							<div class="item-name">HUEVO</div>
+							<div class="item-image"><img src="img/P-huevos.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,5)">
 						<div class="item-content">
-							<div class="item-name">AGUA</div>
-							<div class="item-image"><img src="img/Img-Agua.png"></div>
+							<div class="item-name">AGUA N.</div>
+							<div class="item-image"><img src="img/P-Agua-N.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,13)">
+						<div class="item-content">
+							<div class="item-name">AGUA J.</div>
+							<div class="item-image"><img src="img/P-Agua-J.png"></div>
 						</div>
 						</td>
 						<td class="item" onclick="producto(1,6)">
 						<div class="item-content">
 							<div class="item-name">COCA</div>
-							<div class="item-image"><img src="img/Img-Coca.png"></div>
+							<div class="item-image"><img src="img/P-Coca.png"></div>
 						</div>
 						</td>
-					</tr>		
+					</tr>	
 					<tr class="row-products">
+						<td class="item" onclick="producto(1,11)">
+						<div class="item-content">
+							<div class="item-name">CAFE</div>
+							<div class="item-image"><img src="img/P-cafe.png"></div>
+						</div>
+						</td>
 						<td class="item" onclick="producto(1,9)">
 						<div class="item-content">
 							<div class="item-name">PROMO</div>
 							<div class="item-image"><img src="img/promo.png"></div>
 						</div>
 						</td>
+						<td class="item" onclick="producto(1,12)">
+						<div class="item-content">
+							<div class="item-name">ING. EXTRA</div>
+							<div class="item-image"><img src="img/P-extra.png"></div>
+						</div>
+						</td>
 						<td></td>
-						<td></td>
-						<td></td>
-					</tr>		
+					</tr>			
 					</table>
 				</div>
 				<div class="list">
@@ -705,6 +789,13 @@
 							<td class="column-price"><input id="price7" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,7)">X</td>
 						</tr>
+						<tr class="row-list" id="producto10">
+							<td class="item-list less" onclick="producto(2,10)">-</td>
+							<td class="column-number"><input id="number10" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">BURRITO ASADA</td>
+							<td class="column-price"><input id="price10" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,10)">X</td>
+						</tr>
 						<tr class="row-list" id="producto8">
 							<td class="item-list less" onclick="producto(2,8)">-</td>
 							<td class="column-number"><input id="number8" class="item-list number" type="text" readonly></td>
@@ -712,12 +803,33 @@
 							<td class="column-price"><input id="price8" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,8)">X</td>
 						</tr>
+						<tr class="row-list" id="producto14">
+							<td class="item-list less" onclick="producto(2,14)">-</td>
+							<td class="column-number"><input id="number14" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">CHILAQUILES</td>
+							<td class="column-price"><input id="price14" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,14)">X</td>
+						</tr>
+						<tr class="row-list" id="producto15">
+							<td class="item-list less" onclick="producto(2,15)">-</td>
+							<td class="column-number"><input id="number15" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">HUEVO</td>
+							<td class="column-price"><input id="price15" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,15)">X</td>
+						</tr>
 						<tr class="row-list" id="producto5">
 							<td class="item-list less" onclick="producto(2,5)">-</td>
 							<td class="column-number"><input id="number5" class="item-list number" type="text" readonly></td>
-							<td class="item-list name">AGUA</td>
+							<td class="item-list name">AGUA NATURAL</td>
 							<td class="column-price"><input id="price5" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,5)">X</td>
+						</tr>
+						<tr class="row-list" id="producto13">
+							<td class="item-list less" onclick="producto(2,13)">-</td>
+							<td class="column-number"><input id="number13" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">AGUA JAMAICA</td>
+							<td class="column-price"><input id="price13" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,13)">X</td>
 						</tr>
 						<tr class="row-list" id="producto6">
 							<td class="item-list less" onclick="producto(2,6)">-</td>
@@ -726,12 +838,26 @@
 							<td class="column-price"><input id="price6" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,6)">X</td>
 						</tr>
+						<tr class="row-list" id="producto11">
+							<td class="item-list less" onclick="producto(2,11)">-</td>
+							<td class="column-number"><input id="number11" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">CAFE</td>
+							<td class="column-price"><input id="price11" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,11)">X</td>
+						</tr>
 						<tr class="row-list" id="producto9">
 							<td class="item-list less" onclick="producto(2,9)">-</td>
 							<td class="column-number"><input id="number9" class="item-list number" type="text" readonly></td>
 							<td class="item-list name">PROMO</td>
 							<td class="column-price"><input id="price9" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,9)">X</td>
+						</tr>
+						<tr class="row-list" id="producto12">
+							<td class="item-list less" onclick="producto(2,12)">-</td>
+							<td class="column-number"><input id="number12" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">INGREDIENTE EXTRA</td>
+							<td class="column-price"><input id="price12" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,12)">X</td>
 						</tr>
 					</table>
 				</div>
@@ -788,9 +914,15 @@
 					<option value="QUESADILLA">QUESADILLA</option>
 					<option value="TACO ASADA">TACO ASADA</option>
 					<option value="QUESADILLA ASADA">QUESADILLA ASADA</option>
-					<option value="AGUA">AGUA</option>
+					<option value="AGUA">AGUA NATURAL</option>
 					<option value="COCA">COCA</option>
-					<option value="PROMO">PROMO</option></select>
+					<option value="PROMO">PROMO</option>
+					<option value="BURRITO ASADA">BURRITO ASADA</option>
+					<option value="CAFE">CAFE</option>
+					<option value="EXTRA">EXTRA</option>
+					<option value="AGUA JAMAICA">AGUA JAMAICA</option>
+					<option value="CHILAQUILES">CHILAQUILES</option>
+					<option value="HUEVO">HUEVO</option></select>
 				</tr></table>
 			<div class="sub-title detalle-reporte">Buscar Por Rango de Fechas</div>
 				<table class="new-fields dates">
