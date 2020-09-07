@@ -53,6 +53,7 @@
 	var valor14=0;
 	var valor15=0;
 	var valor16=0;
+	var valor17=0;
 	
 	var total=0;
 	var precio1=0;
@@ -71,13 +72,14 @@
 	var precio14=0;
 	var precio15=0;
 	var precio16=0;
+	var precio17=0;
 	
 	var taco=25;
 	var burrito=30;
 	var gordita=30;
 	var quesadilla=35;
 	var agua=10;
-	var coca=15;
+	var coca=20;
 	var tasada=25;
 	var qasada=35;
 	var promo=60;
@@ -86,8 +88,9 @@
 	var extra=10;
 	var aguaj=15;
 	var chilaquiles=35;
-	var huevo=20;
+	var huevo=25;
 	var empanadas=15;
+	var agual=15;
 	
 	/*	operacion=1 --> suma
 		operacion=2 --> resta
@@ -205,6 +208,13 @@
 				document.getElementById("number16").value=valor16;
 				precio16=precio16+empanadas;
 				document.getElementById("price16").value=precio16;
+			}
+			else if(producto==17){//producto 17 agua 1.5l
+				document.getElementById("producto17").className="row-list on";
+				valor17++;
+				document.getElementById("number17").value=valor17;
+				precio17=precio17+agual;
+				document.getElementById("price17").value=precio17;
 			}
 		}
 		else if(operacion==2){//restar producto
@@ -432,6 +442,20 @@
 					document.getElementById("price16").value=precio16;			
 				}
 			}
+			else if(producto==17){//producto 17 agua 1.5l
+				if(valor17==1){
+					valor17=0;
+					document.getElementById("number17").value=valor17;
+					precio17=0;
+					document.getElementById("price17").value=precio17;
+					document.getElementById("producto17").className="row-list";					
+				}else {				
+					valor17--;
+					document.getElementById("number17").value=valor17;
+					precio17=precio17-agual;
+					document.getElementById("price17").value=precio17;			
+				}
+			}
 		}
 		else if(operacion==3){//eliminar producto
 			if(producto==1){
@@ -546,8 +570,15 @@
 				document.getElementById("price16").value=precio16;
 				document.getElementById("producto16").className="row-list";	
 			}
+			else if(producto==17){
+				valor17=0;
+				document.getElementById("number17").value=valor17;
+				precio17=0;
+				document.getElementById("price17").value=precio17;
+				document.getElementById("producto17").className="row-list";	
+			}
 		}
-		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8+precio9+precio10+precio11+precio12+precio13+precio14+precio15+precio16;
+		total=precio1+precio2+precio3+precio4+precio5+precio6+precio7+precio8+precio9+precio10+precio11+precio12+precio13+precio14+precio15+precio16+precio17;
 		document.getElementById("totalprice").value=total;	
 	}
 	function CobrarPedido(){
@@ -567,6 +598,7 @@
 		valor14=0;
 		valor15=0;
 		valor16=0;
+		valor17=0;
 		total=0;
 		precio1=0;
 		precio2=0;
@@ -584,6 +616,7 @@
 		precio14=0;
 		precio15=0;
 		precio16=0;
+		precio17=0;
 		document.getElementById("number1").value=0;
 		document.getElementById("price1").value=0;
 		document.getElementById("producto1").className="row-list";
@@ -632,5 +665,8 @@
 		document.getElementById("number16").value=0;
 		document.getElementById("price16").value=0;
 		document.getElementById("producto16").className="row-list";
+		document.getElementById("number17").value=0;
+		document.getElementById("price17").value=0;
+		document.getElementById("producto17").className="row-list";
 		document.getElementById("totalprice").value=0;
 	}
