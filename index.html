@@ -42,6 +42,7 @@
 		var Pchilaquiles="CHILAQUILES";
 		var Phuevo="HUEVO";
 		var Pempanadas="EMPANADAS";
+		var PAguaL="AGUA 1.5L";
 		
 		var fecha = new Date();
 		
@@ -446,6 +447,13 @@
 					+'","'+document.getElementById("price16").value
 					+'","'+idpedido+'")');
 			}
+			if(document.getElementById("number17").value!="" & document.getElementById("number17").value!=0){
+				tx.executeSql('INSERT INTO VENTASDETALLE (producto,cantidad,total,pedido) VALUES ("'
+					+empanadas
+					+'","'+document.getElementById("number17").value
+					+'","'+document.getElementById("price17").value
+					+'","'+idpedido+'")');
+			}
 			CobrarPedido();
 			MostrarDetalleProducto();
 		}
@@ -758,10 +766,36 @@
 						<td class="item" onclick="producto(1,16)">
 						<div class="item-content">
 							<div class="item-name">EMPANADAS</div>
-							<div class="item-image"><img src=""></div>
+							<div class="item-image"><img src="img/P-Empanada.png"></div>
 						</div>
 						</td>
-					</tr>			
+					</tr>
+					<tr class="row-products">
+						<td class="item" onclick="producto(1,17)">
+						<div class="item-content">
+							<div class="item-name">AGUA 1.5L</div>
+							<div class="item-image"><img src="img/P-Agua-J.png"></div>
+						</div>
+						</td>
+						<!--<td class="item" onclick="producto(1,)">
+						<div class="item-content">
+							<div class="item-name">PROMO</div>
+							<div class="item-image"><img src="img/promo.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,)">
+						<div class="item-content">
+							<div class="item-name">ING. EXTRA</div>
+							<div class="item-image"><img src="img/P-extra.png"></div>
+						</div>
+						</td>
+						<td class="item" onclick="producto(1,)">
+						<div class="item-content">
+							<div class="item-name">EMPANADAS</div>
+							<div class="item-image"><img src="img/P-Empanada.png"></div>
+						</div>
+						</td>-->
+					</tr>
 					</table>
 				</div>
 				<div class="list">
@@ -879,6 +913,13 @@
 							<td class="column-price"><input id="price16" class="item-list price" type="number" readonly></td>
 							<td class="item-list delete" onclick="producto(3,16)">X</td>
 						</tr>
+						<tr class="row-list" id="producto17">
+							<td class="item-list less" onclick="producto(2,17)">-</td>
+							<td class="column-number"><input id="number17" class="item-list number" type="text" readonly></td>
+							<td class="item-list name">AGUA 1.5L</td>
+							<td class="column-price"><input id="price17" class="item-list price" type="number" readonly></td>
+							<td class="item-list delete" onclick="producto(3,17)">X</td>
+						</tr>
 					</table>
 				</div>
 			</div>
@@ -944,6 +985,7 @@
 					<option value="CHILAQUILES">CHILAQUILES</option>
 					<option value="HUEVO">HUEVO</option></select>
 					<option value="EMPANADAS">EMPANADAS</option></select>
+					<option value="AGUA 1.5L">AGUA 1.5L</option></select>
 				</tr></table>
 			<div class="sub-title detalle-reporte">Buscar Por Rango de Fechas</div>
 				<table class="new-fields dates">
