@@ -75,9 +75,9 @@
 	var precio17=0;
 	
 	var taco=25;
-	var burrito=30;
-	var gordita=30;
-	var quesadilla=35;
+	var burrito=35;
+	var gordita=15; /* se elimino y se puso extra guiso */
+	var quesadilla=45;
 	var agua=10;
 	var coca=20;
 	var tasada=25;
@@ -86,8 +86,8 @@
 	var basada=30;
 	var cafe=15;
 	var extra=10;
-	var aguaj=15;
-	var chilaquiles=35;
+	var aguaj=20;
+	var chilaquiles=40;
 	var huevo=25;
 	var empanadas=15;
 	var agual=15;
@@ -111,7 +111,7 @@
 				precio2=precio2+burrito;
 				document.getElementById("price2").value=precio2;
 			}
-			else if(producto==3){//producto 3 gordita
+			else if(producto==3){//producto 3 extra guiso
 				document.getElementById("producto3").className="row-list on";
 				valor3++;
 				document.getElementById("number3").value=valor3;
@@ -246,7 +246,7 @@
 					document.getElementById("price2").value=precio2;				
 				}
 			}
-			else if(producto==3){//producto 3 gordita
+			else if(producto==3){//producto 3 extra guiso
 				if(valor3==1){
 					valor3=0;
 					document.getElementById("number3").value=valor3;
